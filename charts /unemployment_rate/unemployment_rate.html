@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Venezuela Unemployment Rate </title>
+
+  <link rel="stylesheet" href="styles/pichardo_highcharts.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+  <body>
+    <div id="wrapper">
+
+<h1>  Venezuela Unemployment Rate </h1>
+
+  <div id="container"></div>
+
+</div>
+
+  <script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Venezuela Unemployment Rate'
+      },
+      subtitle: {
+          text: 'Source: <a href="http://www.imf.org/external/datamapper/LUR@WEO/VEN">IMF</a>'
+      },
+      xAxis: {
+          type: 'category',
+          labels: {
+              rotation: -45,
+              style: {
+                  fontSize: '13px',
+                  fontFamily: 'Verdana, sans-serif'
+              }
+          }
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Percentage'
+          }
+      },
+      legend: {
+          enabled: false
+      },
+      tooltip: {
+          pointFormat: 'Unemployment Rate: <b>{point.y:.1f} %</b>'
+      },
+      series: [{
+          name: 'Unemployment Rate',
+          data: [
+              ['1999', 14.5],
+              ['2000', 14],
+              ['2001', 13.4],
+              ['2002', 16],
+              ['2003', 18.2],
+              ['2004', 15.1],
+              ['2005', 12.2],
+              ['2006', 10],
+              ['2007', 8.5],
+              ['2008', 7.4],
+              ['2009', 7.9],
+              ['2010', 8.5],
+              ['2011', 8.2],
+              ['2012', 7.8],
+              ['2013', 7.5],
+              ['2014', 6.7],
+              ['2015', 7.4],
+              ['2016', 20.6],
+              ['2017', 26.4],
+              ['2018', 29.8]
+          ],
+          dataLabels: {
+              enabled: true,
+              rotation: -90,
+              color: '#FFFFFF',
+              align: 'right',
+              format: '{point.y:.1f}', // one decimal
+              y: 10, // 10 pixels down from the top
+              style: {
+                  fontSize: '13px',
+                  fontFamily: 'Verdana, sans-serif'
+              }
+          }
+      }]
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

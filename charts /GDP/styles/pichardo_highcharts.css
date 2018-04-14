@@ -1,0 +1,39 @@
+
+body {
+background: #fff;
+color: #000;
+font-family: "Puritan", Arial, sans-serif;
+font-size: 15px;
+margin: auto;
+text-align: center;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+#wrapper {max-width: 900px;
+  width: 800px;
+  height: 700px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: auto;
+}
+@media (max-width: 800px) {
+#wrapper { width: 700px;
+           height: 600px;
+         padding-left: 20px;
+       padding-right: 20px;}
+body { font-size:11px;}
+
+@media only screen and (max-width : 500px)
+{
+  #wrapper { width: 500px;
+    height: 400px;
+    padding-left: 15px;
+    padding-right: 15px;}
+  body { font-size: 7px}
+
+
+  }
+}

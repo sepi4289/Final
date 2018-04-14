@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Venezuela  Inflation Consumer Prices </title>
+
+  <link rel="stylesheet" href="styles/pichardo_highcharts.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+  <body>
+    <div id="wrapper">
+
+<h1>  Venezuela Inflation Consumer Prices  </h1>
+
+  <div id="container"></div>
+
+</div>
+
+  <script>
+  Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Inflation, Consumer Prices for the Bolivarian Republic of Venezuela'
+    },
+    subtitle: {
+        text: 'Source: <a href="https://fred.stlouisfed.org/series/FPCPITOTLZGVEN">World Bank</a>'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Percent'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Inflation Prices: <b>{point.y:.1f} millions</b>'
+    },
+    series: [{
+        name: 'data',
+        data: [
+            ['1995', 59.9],
+            ['1996', 99.9],
+            ['1997', 50.0],
+            ['1998', 35.8],
+            ['1999', 23.6],
+            ['2000', 16.2],
+            ['2001', 12.5],
+            ['2002', 22.5],
+            ['2003', 31.1],
+            ['2004', 21.7],
+            ['2005', 15.9],
+            ['2006', 13.7],
+            ['2007', 18.7],
+            ['2008', 31.4],
+            ['2009', 27.1],
+            ['2010', 28.2],
+            ['2011', 26.1],
+            ['2012', 21.1],
+            ['2013', 40.6],
+            ['2014', 62.2],
+            ['2015', 121.7],
+            ['2016', 254.9],
+
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '9px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+
+</script>
+
+
+
+
+
+</body>
+</html>

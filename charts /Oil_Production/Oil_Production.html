@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Oil Production Venezuela </title>
+
+  <link rel="stylesheet" href="styles/pichardo_highcharts.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+  <body>
+    <div id="wrapper">
+
+<h1>  Venezuela's Decline of Oil Production </h1>
+
+  <div id="container"></div>
+
+</div>
+
+  <script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Production of total Petroleum and Other Liquids Production'
+      },
+      subtitle: {
+          text: 'Source: <a href="https://www.eia.gov/beta/international/data/browser/#/?pa=0000000000000000000000000000000000vg&c=0000000000000000000000000000000000000000000000002&ct=0&tl_id=5-A&vs=INTL.53-1-VEN-TBPD.A&vo=0&v=C&end=2017">EIA</a>'
+      },
+      xAxis: {
+          categories: [
+              '1996',
+              '1998',
+              '2000',
+              '2002',
+              '2004',
+              '2006',
+              '2008',
+              '2010',
+              '2012',
+              '2014',
+              '2015',
+              '2016',
+              '2017'
+          ],
+          crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          max: 5000,
+          title: {
+              text: 'Barrels of Oil (per Thousands)'
+          }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f} Thousands</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [{
+          name: 'Venezuela',
+          data: [3175, 3409,3460.7588003043, 2924.2040477198,2855.1676698387 ,2746.5337143112, 2701.679632, 2599.489, 2684.55, 2684.55, 2684.55,2461.5172131148,2174.2623287671,]
+
+      }]
+  });
+
+</script>
+
+</body>
+</html>
