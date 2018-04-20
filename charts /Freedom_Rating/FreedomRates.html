@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Venezuela Freedom Rate </title>
 
-  <link rel="stylesheet" href="styles/pichardo_highcharts.css">
+  <link rel="stylesheet" href="styles/normalize.css">
+
   <script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 </head>
   <body>
@@ -20,7 +22,8 @@
 
 Highcharts.chart('container', {
     chart: {
-        type: 'line'
+        type: 'line',
+
     },
     title: {
         text: 'Venezuela Freedom Rate from 1999-2018'
@@ -37,11 +40,11 @@ Highcharts.chart('container', {
         }
     },
     plotOptions: {
-        line: {
+        series: {
             dataLabels: {
                 enabled: true
             },
-            enableMouseTracking: false
+            enableMouseTracking: true
         }
     },
     series: [{
@@ -54,11 +57,21 @@ Highcharts.chart('container', {
         name: 'Political Rights',
         data: [4, 3 , 3 , 3, 4, 4, 5, 5, 5, 5, 5, 5]
     },]
+
+
 });
 
 </script>
 
-
+<!-- NOTE that the specific chart script MUST come BELOW all other Highcharts JavaScript code -->
+<!-- add Highcharts at the end of your page -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- change the Highcharts theme -->
+<script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+<!-- add print and export features - this is optional -->
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<!-- NOTE that the specific chart script MUST come BELOW all other Highcharts JavaScript code -->
+<script src="scripts/my_chart_code.js"></script>
 
 
 

@@ -1,0 +1,11 @@
+
+ #final_map { height:500px;
+             width:100%;
+             margin:auto;
+             display: block;}
+
+ div {box-sizing: border-box;}
+
+  #final_map{
+  max-width: 700px;
+  margin:auto;}

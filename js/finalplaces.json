@@ -1,0 +1,5 @@
+places =[{"place":"I love Venezuela","address":"Northwest 42nd Avenue Miami, FL, United States","latitude":25.791492,"longitude":-80.26421},
+{"place":"Miami Foundation","address":"40 Northwest 3rd Street Suite 305 Miami, FL 33128","latitude":25.7766403,"longitude":-80.1943935},
+{"place":"Cuatro por Venezuela","address":"2726 Bissonnet St # 240-338 Houston TX 7705","latitude":29.725839,"longitude":-95.4216927},
+{"place":"Giving Children Hope","address":"8332 Commonwealth Ave. Buena Park, CA 90621","latitude":33.8695027,"longitude":-117.9877745},
+{"place":"Catholic Relief Services","address":"228 W.Lexington St.Baltimore, Maryland 21201-3443","latitude":39.2917544,"longitude":-76.6193389}]

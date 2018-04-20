@@ -2,103 +2,799 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Humanitarian Crisis Venezuela</title>
-<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <title> Humanitarian Crisis Venezuela</title>
+
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="styles/main.css">
 
-</head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="">
+	<link rel="stylesheet" href="styles/final_map.css">
 
-<body >
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+   </head>
+   <body>
 
 	<!--<div id="mainBody" class="firstimage">-->
- <div class = 'firstimage'>
-	 <div class="container">
- 		<div class="row">
- 		<div class="col-lg-12">
+
+     <div class = 'firstimage'>
+	   <div class="container" >
+     <div class="row">
+ 		 <div class="col-12">
 
 			 <ul>
-		   <li><a href="#home">Home</a></li>
-		   <li><a href="#about">About</a></li>
-		   <li class = "helplink"><a href="#help">Help</a></li>
-		 </ul>
+				 <li class="homelink list-inline"><a href="#home">Home</a></li>
+		     <li class="aboutlink list-inline"><a href="#about">About</a></li>
+		     <li class = "helplink list-inline"><a href="#help">Help</a></li>
+		   </ul>
 
-<button id = "button1" type="button" class="btn btn-outline-primary btn-lg">Start Here</button>
 
-<h1>Venezuela Shortage Crisis</h1>
-	<h4> How does a country with one of the largest
-		reserve of oils in the world turn out into a starving nation?</4>
-		         <h5>Short Story by Sharay Pichardo </h5>
-</div>
-</div>
-</div>
-</div>
 
-	<div class = 'secondimage'>
+       <div id = "home">
+   <h1 class="text-center display-3">Venezuela Shortage Crisis</h1>
+	 <h4 class="text-center lead">How does a country with one of the largest reserve of oil in the world turns into a starving nation?</4>
+	 <h5 class="text-center lead"><small>Digging into Venezuela's reality</small></h5>
+   <div class="text-center"><button id = "button1" type="button" class= "btn btn-outline-danger btn-lg">Start</button> </div>
+	 <div class="text-center footer">
+	 <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Cerros_de_caracas_2.jpg" target="_blank"> Franklin Reyes </a></p>
+	 </div>
+       </div>
+
+
+<!--< Outline/ Facts/ Digging the reality/ Digging into the matter >-->
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+	<div class = 'secondimage'> <!--< start- second image >-->
   	<div class="container">
  		 <div class="row">
- 		 <div class="col-lg-12">
+ 		 <div class="col-12">
 
 			 <ul>
-		   <li><a href="#home">Home</a></li>
-		   <li><a href="#about">About</a></li>
-		   <li class = "helplink"><a href="#help">Help</a></li>
-		 </ul>
+				 <li class= "homelink"><a href="#home">Home</a></li>
+		     <li class="aboutlink"><a href="#about">About</a></li>
+		    <li class = "helplink"><a href="#help">Help</a></li>
+		  </ul>
 
- <button id = "button2" type="button" class="btn btn-outline-primary btn-lg">Click here</button>
+      <div id = "page2">
+      <p class="text-left">Around the world, the country of Venezuela was famous for its large oil reserves, beautiful women,
+	    stunning landscapes, agriculture and distinct natural regions. Today, Venezuela is known for its shortage
+		  on basic goods such as food, medicine, water, and electricity. It is also notorious for its hyperinflation,
+		  corrupt government, and highest crime rates in the world.  According to the Freedom House, an organizations that reports on
+			levels of democracy around the world.Venezuela has been rated as a not free country with one of the worst rates for freedom, political rights and civil liberties.</p>
 
- <p>Around the world, the country of Venezuela was famous for its large oil reserves, beautiful women,
-	  stunning landscapes, agriculture and distinct natural regions. Today, Venezuela is known for its shortage
-		 on basic goods such as food, medicine, water, and electricity. It is also notorious for its hyperinflation,
-		  corrupt government, and highest crime rates in the world.  According to the newspaper Independent, Caracas,
-			 Venezuela, was ranked # 1 as the most violent cities in the world.   </p>
-   </div>
-   </div>
-   </div>
-</div>
+		 <div id="freedom_chart"></div>
+     <script>
+		 Highcharts.chart('freedom_chart', {
+		 	 chart: {
+		 			 type: 'line'
+		 	 },
+		 	 title: {
+		 			 text: 'Venezuela Freedom Rate from 1999-2018'
+		 	 },
+		 	 subtitle: {
+		 			 text: 'Source: <a href="https://freedomhouse.org/report/freedom-world/1999/venezuela" target="_blank">Freedom House</a>.'
+		 	 },
+		 	 xAxis: {
+		 			 Years: ['1999', '2001', '2002', '2004', '2006', '2008', '2010', '2012', '2014', '2016', '2017', '2018']
+		 	 },
+		 	 yAxis: {
+		 			 title: {
+		 					 text: 'Rate:1= Best & 7= Worst'
+		 			 }
+		 	 },
+		 	 plotOptions: {
+		 			 line: {
+		 					 dataLabels: {
+		 							 enabled: true
+		 					 },
+		 					 enableMouseTracking: true
+		 			 }
+		 	 },
+		 	 series: [{
+		 			 name: 'Freedom Rating',
+		 			 data: [4.0, 4.0, 4.0, 3.5, 4.0, 4.0, 4.5, 5.0, 5.0, 5.0, 5.5, 5.5, ]
+		 	 }, {
+		 			 name: 'Civil Liberties',
+		 			 data: [4, 5, 5, 4, 4, 4, 4, 5 , 5, 5, 6, 6]
+		 	 }, {
+		 			 name: 'Political Rights',
+		 			 data: [4, 3 , 3 , 3, 4, 4, 5, 5, 5, 5, 5, 5]
+		 	 },]
+		 });
 
-<div class = 'thirdimage'>
-	<div class="container">
+
+
+		</script>
+
+		<div class="text-center">
+		<button id = "button2" type="button" class="btn btn-outline-danger btn-lg"> Get the Facts</button>
+		</div>
+
+		<div class="text-center footer">
+ 	 <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Sad_itinerant_seller_of_sweets.jpg " target="_blank"> Wilfredo R. Rodriguez H. </a></p>
+ 	 </div>
+
+	  </div>
+    </div>
+    </div>
+    </div>
+    </div>  <!--< close second image >-->
+
+
+   <div class = 'thirdimage'> <!--< start third image >-->
+	 <div class="container">
 	 <div class="row">
-	 <div class="col-lg-12">
+	 <div class="col-12">
 
 		 <ul>
-		 <li><a href="#home">Home</a></li>
-		 <li><a href="#about">About</a></li>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+    <div id="page3">
+    <p class="text-left"> Venezuela crisis started when the global prices for oil felt from $111 per barrel in 2014 to $27 per barrel in 2016.
+			The fall of the oil cause a great economic chaos in Venezuela because 95 % of the export is oil.  These led to a critical economic and
+			political crisis that transform into extreme food and medicine shortages, rising crimes rate, unemployment, massive protests, and hyperflexion
+			 rates in the economy. Venezuela’s economic disaster are the compilation of years of economic mismanagement and the current fall of the barrel of oil in
+			 the market. The International Energy Statistics has measure the decrese of petroleum and other liquids of production in Venezuela.</p>
+
+    <div id="oil_chart"></div>
+   <script>
+  Highcharts.chart('oil_chart', {
+	chart: {
+			type: 'column'
+	},
+	title: {
+			text: 'Production of total Petroleum and Other Liquids Production'
+	},
+	subtitle: {
+			text: 'Source: <a href="https://www.eia.gov/beta/international/data/browser/#/?pa=0000000000000000000000000000000000vg&c=0000000000000000000000000000000000000000000000002&ct=0&tl_id=5-A&vs=INTL.53-1-VEN-TBPD.A&vo=0&v=C&end=2017">EIA</a>'
+	},
+	xAxis: {
+			categories: [
+					'1996',
+					'1998',
+					'2000',
+					'2002',
+					'2004',
+					'2006',
+					'2008',
+					'2010',
+					'2012',
+					'2014',
+					'2015',
+					'2016',
+					'2017'
+			],
+			crosshair: true
+	},
+	yAxis: {
+			min: 0,
+			max: 5000,
+			title: {
+					text: 'Barrels of Oil (per Thousands)'
+			}
+	},
+	tooltip: {
+			headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
+			pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+					'<td style="padding:0"><b>{point.y:.1f} Thousands</b></td></tr>',
+			footerFormat: '</table>',
+			shared: true,
+			useHTML: true
+	},
+	plotOptions: {
+			column: {
+					pointPadding: 0.2,
+					borderWidth: 0
+			}
+	},
+	series: [{
+			name: 'Venezuela',
+			data: [3175, 3409,3460.7588003043, 2924.2040477198,2855.1676698387 ,2746.5337143112, 2701.679632, 2599.489, 2684.55, 2684.55, 2684.55,2461.5172131148,2174.2623287671,]
+
+	}]
+});
+
+ </script>
+
+ <div class="text-center">
+ <button id = "button3" type="button" class="btn btn-outline-danger btn-lg"> Did You Know</button>
+ </div>
+
+ <div class="text-center footer">
+<p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Escasez_de_gasolina_en_Venezuela.png" target="_blank"> Voice of America </a></p>
+</div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+ </div> <!--< close thrid image >-->
+
+      <div class = 'fourthimage'> <!--< start fourth image >-->
+	    <div class="container">
+	    <div class="row">
+	    <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+   <div id="page4">
+   <p class="text-left">For those who decided to stay, they would have to deal with the economic crisis that is
+	   drowning its residents.First, Venezuela inflation is spiraling to 13,000 percent in 2018.
+	   The crisis has destroyed the currency of its country making it almost nonexistent.
+		 Many of its citizens start using the US dollars in order to have any purchasing power.
+		 In January 2018, the minimum wage in Venezuela is of 1,307,646 bolivars per month
+		 which is the equivalent of $6.13 dollars, according CNNMoney. On January 25, 2018, the basic
+		 family basket in Venezuela has surpassed 16-millions bolivares. To cover the cost of the basic
+		 family basket a person would need 93 minimum wage, according to El Nacional.</p>
+
+	 <div class="text-center">
+   <button  id = "button4" type="button" class="btn btn-outline-danger btn-lg"> Learned about it</button>
+   </div>
+
+	 <div class="text-center footer">
+	<p>Image by<a href= "https://www.flickr.com/photos/adavey/33316094304" target="_blank"> Alan </a></p>
+	</div>
+
+	 </div>
+   </div>
+   </div>
+   </div>
+ </div> <!--< close fourth image >-->
+
+    <div class ='fithimage'> <!--< start fith image >-->
+	  <div class="container">
+	  <div class="row">
+	  <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class ="helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+
+   <div id="page5">
+   <p class="text-left">Venezuela economic crisis has led to a sky-high inflation and deficiencies of food, medicines, and basic necessities like toilet paper, soap, toothpaste, and shampoo.
+	  Professionals opinions states that the government strict price controls, which were meant to keep basic goods affordable, are slightly to blame.
+	  In the country, several manufactures have decided to reduce production because of the limits there is to charge for their products. Imports felt,
+	  making foreign-made goods too expensive to purchase. Various buyers were faced with the choice of waiting in line for basic goods or paying overpriced
+		goods that were being re-sell by bachaqueros or black-market traffickers. </p>
+
+    <div class="text-center">
+		<button  id = "button5" type="button" class="btn btn-outline-danger btn-lg"> You need to know More?</button>
+		</div>
+		      <div class="text-center footer">
+  	        <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Marcha_hacia_el_Palacio_de_Justicia_de_Maracaibo_-_Venezuela_16.jpg" target="_blank"> María Alejandra Mora</a></p>
+ 	        </div>
+	 </div>
+   </div>
+   </div>
+   </div>
+   </div>  <!--< close fith image >-->
+
+    <div class = 'siximage'> <!--< start six image >-->
+	  <div class="container">
+	  <div class="row">
+	  <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+
+  <div id="page6">
+   <p class="text-left"> Another economic issue is the currency control.
+	  It was first introduced by Chavez in 2003 to control U.S currency.
+	  The government implement it by selling U.S dollars at different rates,
+	  they created a black market and enhanced opportunities for corruption.
+	  For instance, a business that was authorized to but dollars at preferential
+		rates to purchase basic goods like food and medicine could instead sell those dollars
+		for a higher rate to a. third party.  December 2017, the official exchange rate was 10 bolivares
+		to the dollar while in the black-market rate was more than 9000 bolivares to the dollar.</p>
+
+   <div class="text-center">
+   <button  id = "button6" type="button" class="btn btn-outline-danger btn-lg"> What About The Population?</button>
+   </div>
+
+	 <div class="text-center footer">
+	 	<p>Image by<a href= "https://es.m.wikipedia.org/wiki/Archivo:Protesta_EST.jpg" target="_blank"> Jsnake17</a></p>
+	 </div>
+
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>  <!--< close six image >-->
+
+   <div class = 'sevenimage'> <!--< start seven image >-->
+	 <div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+   <div id="page7">
+   <p class="text-left">  Majority of the population are going to be hungry due to the insufficiency of food and
+		 hiperinflation prices. Around 64.3% of the people in a surveyed said that they lost 11 kilograms in 2017.
+		  The lack of food products has had a dramatic impact on Venezuelan weight and on what they eat, according
+			to a survey on Life Conditions conducted by Simón Bolivar University, Andrés Bello Catholic University and the Central University of Venezuela. </p>
+
+   <div class="text-center">
+   <button  id = "button7" type="button" class="btn btn-outline-danger btn-lg"> What About The Law of Fair Prices?</button>
+	 </div>
+
+	 <div class="text-center footer">
+	 <p>Image by<a href= "https://en.wikipedia.org/wiki/Shortages_in_Venezuela#/media/File:Venezuela_shortages_-_Eating_garbage_1.png" target="_blank"> Voice of America</a></p>
+	</div>
+
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>  <!--< close seven image >-->
+
+   <div class ='eightimage'> <!--< start eight image >-->
+	 <div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class="homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+   <div id="page8">
+   <p class="text-left"> The government of Venezuela executed the law of Fair Prices to keep the cost of products inexpensive.
+	  This law cause that many companies lost their revenues which also cause them to stop manufacturing their products
+	  which made the shortage worse.  As a result, Venezuelan have turned to expensive imports or to buy in the
+	  black market. For many citizen, basic items like eggs and rice have become overpriced and they can not afford it.
+	  Venezuela minimum wage in U.S dollars is equivalent to eight dollars. Making Venezuela citizen with minimum
+		wage poor that they can only buy six percent of the basic goods. The International Monetary Funds shows how the GDP
+		of Venezuela has been drecreasing alarming for the past few years. </p>
+
+			<div id="GDP_chart"></div>
+
+		  <script>
+
+		  Highcharts.chart('GDP_chart', {
+		      chart: {
+		          type: 'areaspline'
+		      },
+		      title: {
+		          text: 'Venezuela GDP per capital 2000 - 2017 '
+		      },
+
+					subtitle: {
+							text: 'Source: <a href="http://www.imf.org/external/datamapper/NGDP_RPCH@WEO/VEN/VEN?year=2017">IMF Data</a>'
+					},
+
+		      legend: {
+		          layout: 'vertical',
+		          align: 'center',
+		          verticalAlign: 'top',
+		          x: 150,
+		          y: 100,
+		          floating: true,
+		          borderWidth: 2,
+		          backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+		      },
+		      xAxis: {
+		          categories: [
+		              '2000',
+		              '2001',
+		              '2002',
+		              '2003',
+		              '2004',
+		              '2005',
+		              '2006',
+		              '2007',
+		              '2008',
+		              '2009',
+		              '2010',
+		              '2011',
+		              '2012',
+		              '2013',
+		              '2014',
+		              '2015',
+		              '2016',
+		              '2017',
+		          ],
+		      },
+		      yAxis: {
+		          title: {
+		              text: 'Anual percent change'
+		          }
+		      },
+		      tooltip: {
+		          shared: true,
+		          valueSuffix: '%'
+		      },
+		      credits: {
+		          enabled: true
+		      },
+		      plotOptions: {
+		          areaspline: {
+		              fillOpacity: 0.5
+		          }
+		      },
+		      series: [{
+		          name: 'Venezuela real GDP growth',
+		          data: [3.7, 3.4, -8.9,-7.8,	18.3, 10.3,	9.9, 8.8,	5.3,-3.2,-1.5,4.2,5.6,1.3,-3.9,-6.2,-16.5,-12,]
+		      }, ]
+		  });
+
+		 </script>
+
+		 <div class="text-center">
+     <button  id = "button8" type="button" class="btn btn-outline-danger btn-lg">Learn More!</button>
+     </div>
+
+		 <div class="text-center footer">
+		 <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Escasez_en_Venezuela,_Mercal.JPG" target="_blank"> The Photographer</a></p>
+		</div>
+
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>  <!--< close eight image >-->
+
+    <div class = 'nineimage'> <!--< start nine image >-->
+	  <div class="container">
+	  <div class="row">
+	  <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+
+    <div id="page9">
+  <p class="text-left">In 2016, the Venezuelan Pharmaceutical Federation estimated that 85 % of
+	 basic medicine where unavailable or hard to obtain. Hospitals have absence
+	 of supplies such as antibiotics, morphine, pain killers, gauze, soap among others.
+	 Diseases previously eliminated from the country have reemerged. Such as, cholera, diphtheria,
+	 malaria, Hepatitis A, Tuberculosis, Yellow Fever, typhoid among others.
+	 In 2016 infant mortality increased by 30 % and maternal mortality 65 % over two years prior,
+	 according to governmental figures. Other study, found that 30 percent of children were malnourished.</p>
+
+   <div class="text-center">
+   <button  id = "button9" type="button" class="btn btn-outline-danger btn-lg"> Let's Dig deeper!</button>
+	 </div>
+
+	 <div class="text-center footer">
+	 <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:People_lines_in_Venezuela_2.JPG" target="_blank"> The Photographer</a></p>
+	</div>
+
+	 </div>
+   </div>
+   </div>
+   </div>
+   </div>  <!--< close nine image >-->
+
+   <div class = 'tenimage'> <!--< start ten image >-->
+	 <div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		   <li class="aboutlink"><a href="#about">About</a></li>
+		   <li class = "helplink"><a href="#help">Help</a></li>
+	   </ul>
+
+    <div id="page10">
+     <p class="text-left">Today, 87 % of Venezuelans are living in poverty, according to
+	    the universities study. This is due to the fact that companies cannot
+	    compete with the regulate prices that the government offer. So, they either
+	    decide to close or work with little personnel as possible.
+	    Causing to rise the levels of unemployment and levels of crimes.   </p>
+
+
+	    <div id="unemployment_chart"></div>
+      <script>
+      Highcharts.chart('unemployment_chart', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Venezuela Unemployment Rate'
+      },
+      subtitle: {
+          text: 'Source: <a href="http://www.imf.org/external/datamapper/LUR@WEO/VEN">IMF</a>'
+      },
+      xAxis: {
+          type: 'category',
+          labels: {
+              rotation: -45,
+              style: {
+                  fontSize: '11px',
+                  fontFamily: 'Verdana, sans-serif'
+              }
+          }
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Percentage'
+          }
+      },
+      legend: {
+          enabled: true
+      },
+      tooltip: {
+          pointFormat: 'Unemployment Rate: <b>{point.y:.1f} %</b>'
+      },
+      series: [{
+          name: 'Unemployment Rate',
+          data: [
+              ['1999', 14.5],
+              ['2000', 14],
+              ['2001', 13.4],
+              ['2002', 16],
+              ['2003', 18.2],
+              ['2004', 15.1],
+              ['2005', 12.2],
+              ['2006', 10],
+              ['2007', 8.5],
+              ['2008', 7.4],
+              ['2009', 7.9],
+              ['2010', 8.5],
+              ['2011', 8.2],
+              ['2012', 7.8],
+              ['2013', 7.5],
+              ['2014', 6.7],
+              ['2015', 7.4],
+              ['2016', 20.6],
+              ['2017', 26.4],
+              ['2018', 29.8]
+          ],
+          dataLabels: {
+              enabled: true,
+              rotation: -90,
+              color: '#FFFFFF',
+              align: 'right',
+              format: '{point.y:.1f}', // one decimal
+              y: 10, // 10 pixels down from the top
+              style: {
+                  fontSize: '11px',
+                  fontFamily: 'Verdana, sans-serif'
+              }
+          }
+      }]
+  });
+   </script>
+   <div class="text-center">
+   <button  id = "button10" type="button" class="btn btn-outline-danger btn-lg"> What Are The Opportunities?</button>
+	 </div>
+
+	 <div class="text-center footer">
+	<p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Protesta_en_Caracas,_10May14_(14164299965).jpg" target="_blank"> Carlos Díaz</a></p>
+ </div>
+
+   </div>
+   </div>
+   </div>
+   </div>
+   </div>  <!--< close ten image >-->
+
+
+<div class = 'elevenimage'> <!--< start eleven image >-->
+	<div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		  <li class="aboutlink"><a href="#about">About</a></li>
 		 <li class = "helplink"><a href="#help">Help</a></li>
 	 </ul>
 
-<button  id = "button3" type="button" class="btn btn-outline-primary btn-lg">Click here to Restart</button>
+  <div id="page11">
+  <p class="text-left">	The absence of opportunities and poverty have aggravating Venezuela’s high rates of
+		 violence.  In 2016 Venezuela saw its highest-ever homicide rate at 91.8 homicides per
+		 100,000 residents, according to the Venezuelan Violence Observatory, an independent
+		 monitoring group.  (The US rate is per 100,000).  </p>
 
-<p>Venezuela crisis start when the global prices for oil fell from $111 per barrel in 2014 to $27 per barrel in 2016
-	 The fall of the oil cause a great economic chaos in Venezuela. Since 95 % of Venezuela export is oil.
-	  These led to and critical economic and political crisis that transform into extreme food and medicine shortages,
-		 rising crimes rate, unemployment, massive protests, and hyperflexion rates in the economy. Venezuela’s economic
-		 disaster are the compilation of years of economic mismanagement. </p>
- </div>
- </div>
- </div>
-</div>
+  <div class="text-center">
+  <button  id = "button11" type="button" class="btn btn-outline-danger btn-lg"> Follwing Up</button>
+  </div>
 
-<div id = "help" class = 'fourthimage'>
+	<div class="text-center footer">
+ <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:Typical_colonial_house_from_downtown_Maracaibo.jpg" target="_blank"> The Photographer</a></p>
+ </div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>  <!--< close eleven image >-->
+
+<div class = 'twelveimage'> <!--< start twelve image >-->
 	<div class="container">
 	 <div class="row">
-	 <div class="col-lg-12">
+	 <div class="col-12">
 
 		 <ul>
-		 <li><a href="#home">Home</a></li>
-		 <li><a href="#about">About</a></li>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		  <li class="aboutlink"><a href="#about">About</a></li>
+		 <li class = "helplink"><a href="#help">Help</a></li>
 	 </ul>
 
-<p>Please help the people of Venezuela by donating.. </p>
+
+<div id="page12">
+<p class="text-left"> According to a 2016 report from Human Rights Watch, the Maduro administration
+	“has vehemently denied the extent of the need for help and has blocked an effort by
+	 the opposition-led National Assembly to seek international assistance.”
+All of these has cause Venezuelan citizens to flee to other countries pursuing for
+ a better quality of life. In the past two years over five hundred thousand have left Venezuela.
+  Going to bordering countries like Colombia and Brazil.</p>
+
+  <div class="text-center">
+	<button  id = "button12" type="button" class="btn btn-outline-danger btn-lg"> The End</button>
+  </div>
+
+	<div class="text-center footer">
+  <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:2014_Venezuela_Protestor_Sign.png" target="_blank"> Zfigueroa </a></p>
+  </div>
+
  </div>
  </div>
  </div>
+ </div>
+</div>  <!--< close twelve image >-->
+
+<div class = 'thirteenimage'> <!--< start thirteen image >-->
+	<div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		  <li class="aboutlink"><a href="#about">About</a></li>
+		 <li class = "helplink"><a href="#help">Help</a></li>
+	 </ul>
+
+
+<div id="page13">
+<p class="text-left">The biggest question to this problem is if the government does not want to change its
+	policy and set a new route to transform the economic, social, and political environment that is destroying
+	Venezuela. Who or what can save this country of its own disaster? No one knows the answer to this question.
+ Many claims they individually are the solution. I believe it needs a team effort, not an idiosyncratic one.  </p>
+
+ <div class="text-center footer">
+ <p>Image by<a href= "https://www.flickr.com/photos/wilfredor/16299794680" target="_blank"> Wilfredorrh </a></p>
+ </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+</div>  <!--< close thirteen image >-->
+
+
+
+
+<div  id ="about" class= 'aboutimage'> <!--< start aboutimage link >-->
+	<div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+	 <li class="aboutlink"><a href="#about">About</a></li>
+		 <li class ="helplink"><a href="#help">Help</a></li>
+	 </ul>
+
+<div id="pageabout">
+<p class="text-left"> Hello! my name is Sharay Pichardo I am originally from Caracas Venezuela
+	but currently I am living in the United State. Presently, I am a student at the University of Florida,
+	 pursuing a bachelor’s degree on advertising and digital media.  I choose to inform about Venezuela
+	 because it is indented in my persona. I can never find a way to not talk about it.
+	 Venezuela was the place that saw me growth, and I feel the obligation of inform people about the
+	 current crisis Venezuela is living. This page is design to inform and educate people about the current
+	 crisis Venezuela is having and to give suggestions of places where you can go and donate food, medicine
+	 or any item that you feel would help to easy the Venezuelan Crisis.  </p>
+
+	 <div class="text-center footer">
+	 <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:2017_Venezuelan_protests_flag.jpg" target="_blank"> Efecto Eco </a></p>
+	 </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>  <!--< close aboutimage link >-->
+
+
+
+<div id = "help" class = 'helpimage'>  <!--< start help link  >-->
+	<div class="container">
+	 <div class="row">
+	 <div class="col-12">
+
+		 <ul>
+			 <li class= "homelink"><a href="#home">Home</a></li>
+		 <li class="aboutlink"><a href="#about">About</a></li>
+			 <li><a href="#help">Help</a></li>
+	 </ul>
+<div id="pagehelp">
+<p class="text-left">  Are looking to help the crisis that is currently going on in Venezuela?
+	 Here are a few nonprofits organizations where you can go and donate food, medicine or any type of items
+	 you could help the Venezuelan community. Here are some of the Nonprofits organizations you can go and donate for Venezuela around the USA:
+
+  <p> <a href="https://www.ilovevenezuela.org/" target="_blank">I Love Venezuela</a>.</p>
+	<p> <a href="https://nonprofits.miamifoundation.org/profile/venezuela-awareness-foundation-inc" target="_blank">Venezuela Awareness Foundation</a>.</p>
+  <p> <a href="http://www.givingchildrenhope.org/venezuela/" target="_blank">Giving Children Hope</a>.</p>
+	<p> <a href="https://www.cuatroporvenezuela.org/ " target="_blank">Cuatro por Venezuela</a>.</p>
+	<p> <a href="https://support.crs.org/donate/crisis-venezuela" target="_blank">Catholic Relief Services</a>.</p>
+
+	<div id="container">
+<div id="final_map"></div>
+<script src="js/finalplaces.json"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+
+	 <script>
+var mymap=L.map('final_map').setView([ 37.09024 ,-95.712891 ],4);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/sepi4289/cjflt1di1096y2rmys0u8w05j/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2VwaTQyODkiLCJhIjoiY2pmbHJtcjI1MG0yaTJ4czJ3MXVnOHkxbiJ9.Zx8NtRY3DSe9HZJjaKYr9A', {
+attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+maxZoom: 18
+}).addTo(mymap);
+
+for ( var i=0; i < places. length; i++ ) {
+L.marker([places[i].latitude,places[i].longitude])
+.bindPopup('<b>'+ places[i].place +'</b>'+'<br>'+ places[i].address+'</br>')
+.addTo(mymap);
+}
+	</script>
+
 </div>
 
+<div class="text-center footer">
+ <p>Image by<a href= "https://commons.wikimedia.org/wiki/File:US_Venezuelans_donate.png" target="_blank"> Voice of America </a></p>
+ </div>
+
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>   <!--< close help link  >-->
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 								<script src="js/jquery.min.js" type='text/javascript'></script>
 								<script src="js/main.js" type='text/javascript'></script>
-
+                <script src="js/finalplaces.json" type='text/javascript'></script>
 </body>
 </html>
