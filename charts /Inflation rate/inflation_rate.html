@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Venezuela Freedom Rate </title>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+</head>
+  <body>
+
+<h1>  Venezuela Inflation Rate </h1>
+
+
+    <div id="container"></div>
+
+  <script>
+
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Venezuela Inflation Rate from 2012-2018'
+      },
+      subtitle: {
+          text: 'Source: <a href="https://www.statista.com/statistics/371895/inflation-rate-in-venezuela/" target="_blank"> Statista.com</a>.'
+      },
+      xAxis: {
+          categories: [
+              '2012',
+              '2013',
+              '2014',
+              '2015',
+              '2016',
+              '2017',
+              '2018',
+          ],
+          crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Inflation Rate (%)'
+          }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:red;padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [
+      {
+        name: 'Venezuela',
+        data: [21.07,43.53, 57.31, 111.8,254.39 ,652.67 ,2349.28,]
+
+    }
+    ]
+  });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Venezuela Freedom Rate </title>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+</head>
+  <body>
+
+<h1> Most Dangerous Cities </h1>
+
+
+    <div id="container"></div>
+
+  <script>
+  Highcharts.chart('container', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Most Dangerous Cities 2016, by murder rate'
+      },
+      subtitle: {
+        text: 'Source: <a href="https://www.statista.com/statistics/243797/ranking-of-the-most-dangerous-cities-in-the-world-by-murder-rate-per-capita/" target="_blank">statista.com</a>.'
+    },
+      xAxis: {
+          categories: ['2016',]
+      },
+      yAxis: {
+        title: {
+            text: 'Rate per 100,000 inhabitants (%)'
+        }
+    },
+    tooltip: {
+        shared: false,
+        valueSuffix: '%'
+    },
+      credits: {
+          enabled: true
+      },
+      series: [{
+          name: 'Caracas-Venezuela',
+          data: [130.35]
+      },{
+          name: 'Mexico-Acapulco',
+          data: [113.24]
+      },{
+          name: 'St.Louis-USA',
+          data: [60.37]
+      },{
+          name: 'Detroit-USA',
+          data: [44.6]
+      },{
+          name: 'Durban-South Africa',
+          data: [34.43]
+      }]
+  });
+
+</script>
+
+
+
+
+</body>
+</html>

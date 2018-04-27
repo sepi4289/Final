@@ -1,6 +1,7 @@
 
 body{
   margin: 0;
+  padding: 0;
 }
 
 .firstimage {
@@ -13,7 +14,7 @@ body{
     width: 100%;
     position: relative;
   width: 100%;
-  height:1000px;
+  height:1300px;
   background-image: url('../images/cerros.jpg');
 
 }
@@ -37,8 +38,7 @@ body{
     padding: 1em;
     width: 100%;
     position: relative;
-  width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url('../images/sad.jpg');
 
 }
@@ -65,7 +65,7 @@ body{
     width: 100%;
     position: relative;
     width: 100%;
-    height: 1000px;
+    height: 1300px;
     background-image: url("../images/nohaygasolina.png");
   }
   .thirdimage:before {
@@ -91,7 +91,7 @@ body{
     width: 100%;
     position: relative;
     width: 100%;
-    height: 1000px;
+    height: 1300px;
     background-image: url("../images/dictadura.jpg");
       }
 .fourthimage:before {
@@ -116,7 +116,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/escazes.jpg");
         }
 .fithimage:before {
@@ -141,7 +141,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/protesta.jpg");
           }
   .siximage:before {
@@ -165,7 +165,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/garbage.png");
             }
   .sevenimage:before {
@@ -189,7 +189,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/line.JPG");
               }
 .eightimage:before {
@@ -213,7 +213,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/nocash.JPG");
                 }
   .nineimage:before {
@@ -237,7 +237,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/protester.jpg");
                   }
   .tenimage:before {
@@ -261,7 +261,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/poverty.jpg");
                     }
   .elevenimage:before {
@@ -285,7 +285,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/paper.png");
                         }
   .twelveimage:before {
@@ -308,7 +308,7 @@ body{
   width: 100%;
   position: relative;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   background-image: url("../images/kidpoor.jpg");
                         }
   .thirteenimage:before {
@@ -332,7 +332,7 @@ body{
                       width: 100%;
                       position: relative;
                       width: 100%;
-                      height: 1000px;
+                      height: 1300px;
                       background-image: url("../images/donations.png");
                     }
                     .helpimage:before {
@@ -356,7 +356,7 @@ body{
                       width: 100%;
                       position: relative;
                       width: 100%;
-                      height: 1000px;
+                      height: 1300px;
                       background-image: url("../images/flag.jpg");
                     }
                     .aboutimage:before {
@@ -400,21 +400,29 @@ body{
         overflow: hidden;
         float: left;
         display: block;
-        color: #ffff;
+        color: #FFFF;
         text-align: center;
         padding: 14px 16px;
         }
 
 
-        li a:hover:not(.active) {background-color:none;}
+        li a:hover{ color: #ffa500; }
         li a:visited{ color:#FFFF;}
-        li a:active { color:#FFFF;}
+        li a:active { color:#ffa500;}
         li a:link {color:#FFFF;}
 
 
-        p a:link { color: #FFFF; }
-        p a:visited { color: #ffff; }
-        p a:hover { color: #f4e242; }
+        a:link { color: #FFFF; }
+        a:visited { color: #ffff; }
+        a:hover { color: #ffa500; }
+
+                p a:hover{ color: #ffa500 }
+                p a:visited{ color:#ffa500;}
+                p a:active { color:#FFFF;}
+                p a:link {color:#FFFF;}
+
+
+  div a:hover {color:#ffa500;}
 
 
 #home{top: 600%;
@@ -506,8 +514,29 @@ position: absolute;
 left: 10%;
 right: 30%;}
 
+.boxing{
+  border: 1px solid burgandy ;
+  background-color: rgba(50,0,13, 0.6);
+  border-radius: 7px;
+
+
+}
+p{
+padding: 4%;
+font-size: 20px;}
+
+
+
+
   @media (max-width: 792px)
   {
-    #page2, #page3, #page8, #page10
+    #page2, #page3, #page7,#page8, #page10, #page12
     {left:10%;right: 10%}
+  }
+  @media (max-width: 500px)
+  {
+     .secondimage,.thirdimage,.fourthimage,.fithimage, .sixthimage, .sevenimage, .eightimage, .tenimage,.elevenimage,.twelveimage, .nineimage
+     {
+       height: 1750px;
+     }
   }

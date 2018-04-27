@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Net Immgration Rate </title>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/themes/dark-unica.js"></script>
+</head>
+  <body>
+
+<h1> Net Immgration Rate </h1>
+
+
+    <div id="Net_Immgration_rate"></div>
+
+  <script>
+
+  Highcharts.chart('Net_Immgration_rate', {
+
+      title: {
+          text: 'Net Immigration Rate 2000-2017'
+      },
+
+      subtitle: {
+          text: 'Source: thesolarfoundation.com'
+      },
+
+      yAxis: {
+          title: {
+              text: 'Net Immigration Rate (per 1000 people) '
+          }
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle'
+      },
+
+      plotOptions: {
+          series: {
+              label: {
+                  connectorAllowed: false
+              },
+              pointStart: 2000
+          }
+      },
+
+      series: [{
+          name: 'net immigration rate',
+          data: [-0.19,	-0.15,-0.11,-0.07,-0.04,	0,	0,-1.28,-0.84,-0.42,	0,	0,	0,	0,	0, 0,	-1.2, -1.2]
+      }],
+
+      responsive: {
+          rules: [{
+              condition: {
+                  maxWidth: 500
+              },
+              chartOptions: {
+                  legend: {
+                      layout: 'horizontal',
+                      align: 'center',
+                      verticalAlign: 'bottom'
+                  }
+              }
+          }]
+      }
+
+  });
+
+</script>
+
+
+
+
+</body>
+</html>
