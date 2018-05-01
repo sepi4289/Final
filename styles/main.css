@@ -400,26 +400,26 @@ body{
         overflow: hidden;
         float: left;
         display: block;
-        color: #FFFF;
+        color: #FFF;
         text-align: center;
         padding: 14px 16px;
         }
 
 
         li a:hover{ color: #ffa500; }
-        li a:visited{ color:#FFFF;}
+        li a:visited{ color:#FFF;}
         li a:active { color:#ffa500;}
-        li a:link {color:#FFFF;}
+        li a:link {color:#FFF;}
 
 
-        a:link { color: #FFFF; }
-        a:visited { color: #ffff; }
+        a:link { color: #FFF; }
+        a:visited { color: #fff; }
         a:hover { color: #ffa500; }
 
                 p a:hover{ color: #ffa500 }
                 p a:visited{ color:#ffa500;}
-                p a:active { color:#FFFF;}
-                p a:link {color:#FFFF;}
+                p a:active { color:#FFF;}
+                p a:link {color:#FFF;}
 
 
   div a:hover {color:#ffa500;}
@@ -515,10 +515,8 @@ left: 10%;
 right: 30%;}
 
 .boxing{
-  border: 1px solid burgandy ;
   background-color: rgba(50,0,13, 0.6);
   border-radius: 7px;
-
 
 }
 p{
