@@ -58,7 +58,6 @@
     </div>
     </div>
 
-
 	<div class = 'secondimage'> <!--< start- second image >-->
   	<div class="container">
  		 <div class="row">
@@ -80,9 +79,8 @@
 			around the world, Venezuela has been rated as a not free country with one of the worst rates for freedom, political rights, and civil liberties. </p>
 		</div>
 
-
-
 		 <div id="freedom_chart" class="chart"></div>
+
      <script>
 		 Highcharts.chart('freedom_chart', {
 	     chart: {
@@ -124,8 +122,9 @@
 
 		</script>
 
+
 		<div class="text-center">
-		<button id = "button2" type="button" class="btn btn-outline-warning btn-lg"> Get the facts</button>
+		<button id = "button2" type="button" class="btn btn-outline-warning btn-lg" > Get the facts</button>
 		</div>
 
 		<div class="text-center footer">
@@ -219,7 +218,7 @@
  </script>
 
  <div class="text-center">
- <button id = "button3" type="button" class="btn btn-outline-warning btn-lg"> Did you know</button>
+ <button id = "button3" type="button" class="btn btn-outline-warning btn-lg" > Did you know</button>
  </div>
 
  <div class="text-center footer">
@@ -787,69 +786,73 @@
 
 <div id="page12">
 	<div class = "boxing">
-<p class="text-left"> According to a 2016 report from the Human Rights Watch, the Maduro administration “has vehemently denied the extent of the need for help and has blocked an effort by the opposition-led National Assembly to seek international assistance.” All of these have caused Venezuelan citizens to flee to other countries to pursue for a better quality of life. In the past two years over five hundred thousand people have left Venezuela, going to bordering countries like Colombia and Brazil.The indexmundi website shows the net immigration rate of Venezuela
-has been negative since 2000 denoting that more people having been leaving the country than the
-number of people entering the country. For instance, in 2017 the net immigration rate was -1.2 i.e.
-for every 1000 people of the population, 1.2 have left Venezuela in 2017.
+<p class="text-left"> According to a 2016 report from the Human Rights Watch, the Maduro administration
+	“has vehemently denied the extent of the need for help and has blocked an effort by the opposition-led National
+Assembly to seek international assistance.” All of these have caused Venezuelan citizens to flee to other countries
+to pursue for a better quality of life. The UN Refugee Agency has estimated that 170,169 Venezuelan
+have seek for asylum from 2014-2018.
 </thead>
 </p>
 </div>
 
-<div id="Net_Immgration_rate"></div>
+<div id="Asylum"></div>
 
 <script>
-
-Highcharts.chart('Net_Immgration_rate', {
-
-	title: {
-			text: 'Net Immigration Rate 2000-2017'
-	},
-
-	subtitle: {
-			text:
-			'Source: <a href="https://www.indexmundi.com/g/g.aspx?v=27&c=ve&l=en" target="_blank">indexmundi.com</a>'
-	},
-
-	yAxis: {
-			title: {
-					text: 'Net Immigration Rate (per 1000 people) '
-			}
-	},
-	legend: {
-			layout: 'vertical',
-			align: 'right',
-			verticalAlign: 'middle'
-	},
-
-	plotOptions: {
-			series: {
-					label: {
-							connectorAllowed: false
+Highcharts.chart('Asylum', {
+		chart: {
+				type: 'bar'
+		},
+		title: {
+				text: 'Asylum-seekers from Venezuela 2014-18'
+		},
+		subtitle: {
+				text: 'Source: <a href="https://data2.unhcr.org/en/situations/vensit" target="_blank">UNHCR</a>'
+		},
+		xAxis: {
+				categories: ['2014', '2015', '2016', '2017', '2018'],
+				title: {
+						text:'Years',
 					},
-					pointStart: 2000
-			}
-	},
 
-	series: [{
-			name: 'net immigration rate',
-			data: [-0.19,	-0.15,-0.11,-0.07,-0.04,	0,	0,-1.28,-0.84,-0.42,	0,	0,	0,	0,	0, 0,	-1.2, -1.2]
-	}],
+			},
 
-	responsive: {
-			rules: [{
-					condition: {
-							maxWidth: 500
-					},
-					chartOptions: {
-							legend: {
-									layout: 'horizontal',
-									align: 'center',
-									verticalAlign: 'bottom'
-							}
-					}
-			}]
-	}
-
+		yAxis: {
+				min: 0,
+				title: {
+						text: 'Venezuelan Asylum-Seeker(thousands)',
+				},
+				labels: {
+						overflow: 'justify'
+				}
+		},
+		tooltip: {
+				valueSuffix: 'K'
+		},
+		plotOptions: {
+				bar: {
+						dataLabels: {
+								enabled: true
+						}
+				}
+		},
+		legend: {
+				layout: 'vertical',
+				align: 'right',
+				verticalAlign: 'top',
+				x: -40,
+				y: 80,
+				floating: true,
+				borderWidth: 1,
+				backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				shadow: true
+		},
+		credits: {
+				enabled: true
+		},
+		series: [{
+				name: 'Asylum Seekers 2014-2018',
+				data: [4.040,10.168,34.183,110.666,11.211]
+		}, ]
 });
 
 </script>
@@ -1012,7 +1015,7 @@ L.marker([places[i].latitude,places[i].longitude])
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 								<script src="js/jquery.min.js" type='text/javascript'></script>
-								<script src="js/main.js" type='text/javascript'></script>
+								<script src="js/main.js"type='text/javascript'></script>
                 <script src="js/finalplaces.json" type='text/javascript'></script>
 </body>
 </html>

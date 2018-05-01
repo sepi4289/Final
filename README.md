@@ -31,3 +31,7 @@ https://www.w3schools.com/css/css_image_transparency.asp
 https://www.w3schools.com/css/css3_box-sizing.asp
 https://www.w3schools.com/jquery/jquery_fade.asp
 https://www.w3schools.com/w3css/w3css_animate.asp
+
+Final summary of my project
+
+I love working on this project.It was fun, challenging but kept me engage until the end and even though, it was hard  work I did not mind doing research or taking extra time to figure out how exactly I wanted my page to look and respond. In addition, through out this process I had great help from my professor Mindy McAdams. She helped me to to understand and use techniques in a more efficient way such as bootstrap, ccs, jQuery, among others. This project help me to tested a lot of my knowledge on css, html, jQuery, bootstrap, Javascript and it gave me confidence that I can do anything that I put my mind into it. It also help me to see how much time and work it takes to make a page responsive and beautiful. It was a great inside of what my future career path would look like. I also, learned how bootstrap can be more productive when it comes to make the page responsive. I am a master of finding data and making great high chart. Moreover, I am looking forward to keeping learning and  working on developing  more projects, gained more skills to be one of the best front end developers in the market. To conclude, I am looking forward to uses all my web designing  skills to create an outstanding personal portfolio to show all of my projects. 

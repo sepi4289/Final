@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Net Immgration Rate </title>
+  <title> Asylum Seeker Venezuela  </title>
 
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -12,63 +12,67 @@
 </head>
   <body>
 
-<h1> Net Immgration Rate </h1>
+<h1> Asylum Seeker Venezuela </h1>
 
 
-    <div id="Net_Immgration_rate"></div>
+    <div id="Asylum"></div>
 
   <script>
-
-  Highcharts.chart('Net_Immgration_rate', {
-
+  Highcharts.chart('Asylum', {
+      chart: {
+          type: 'bar'
+      },
       title: {
-          text: 'Net Immigration Rate 2000-2017'
+          text: 'Asylum-seekers from Venezuela 2014-18'
       },
-
       subtitle: {
-          text: 'Source: thesolarfoundation.com'
+          text: 'Source: <a href="https://data2.unhcr.org/en/situations/vensit" target="_blank">UNHCR</a>'
       },
+      xAxis: {
+          categories: ['2014', '2015', '2016', '2017', '2018'],
+          title: {
+              text:'Years',
+            },
+
+        },
 
       yAxis: {
+          min: 0,
           title: {
-              text: 'Net Immigration Rate (per 1000 people) '
+              text: 'Venezuelan Asylum-Seeker(thousands)',
+          },
+          labels: {
+              overflow: 'justify'
+          }
+      },
+      tooltip: {
+          valueSuffix: 'K'
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
           }
       },
       legend: {
           layout: 'vertical',
           align: 'right',
-          verticalAlign: 'middle'
+          verticalAlign: 'top',
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+          shadow: true
       },
-
-      plotOptions: {
-          series: {
-              label: {
-                  connectorAllowed: false
-              },
-              pointStart: 2000
-          }
+      credits: {
+          enabled: true
       },
-
       series: [{
-          name: 'net immigration rate',
-          data: [-0.19,	-0.15,-0.11,-0.07,-0.04,	0,	0,-1.28,-0.84,-0.42,	0,	0,	0,	0,	0, 0,	-1.2, -1.2]
-      }],
-
-      responsive: {
-          rules: [{
-              condition: {
-                  maxWidth: 500
-              },
-              chartOptions: {
-                  legend: {
-                      layout: 'horizontal',
-                      align: 'center',
-                      verticalAlign: 'bottom'
-                  }
-              }
-          }]
-      }
-
+          name: 'Asylum Seekers 2014-2018',
+          data: [4.040,10.168,34.183,110.666,11.211]
+      }, ]
   });
 
 </script>
